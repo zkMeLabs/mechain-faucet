@@ -6,6 +6,10 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
+html, body, #__next{
+  height : 100%;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -13,4 +17,40 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+.app,
+.ant-layout {
+  height: 100%;
+}
+
+.ant-layout-header {
+  color: #fff;
+  background-image: url('/images/bg_header.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.ant-layout-footer {
+  color: #fff;
+  background-image: url("/images/bg_footer.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.header-logo {
+  margin-top: 12px;
+  margin-left: 40%;
+}
+
+.ant-card-head-title {
+  text-align: center;
+}
+
+.ant-spin-nested-loading, .ant-spin-container {
+  height: 100%;
+}
+
+#nc_1_n1z {
+  height: 34px;
 }
