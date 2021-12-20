@@ -61,7 +61,7 @@ export default class App extends Component {
 
   send = async () => {
     const { value } = this.inputAddress.state
-    let to = value || "0x00000be6819f41400225702d32d3dd23663dd690"
+    let to = value
 
     if (!to) {
       message.error("Please enter an address")
