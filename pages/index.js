@@ -116,7 +116,7 @@ export default class App extends Component {
                   <Card title="NELO NETWORK FAUCET" bordered={true}>
                     <Input ref={c => this.inputAddress = c} size="large" placeholder="Input you address" allowClear style={{ marginBottom: "15px" }} />
                     {/* <div id="nc"></div> */}
-                    <Button onClick={this.send} type="primary" size="large" disabled={result && !err && false} style={{ width: '100%', marginTop: "10px" }}>requset 0.1 nelo</Button>
+                    <Button onClick={this.send} type="primary" size="large" disabled={result && !err && false} style={{ width: '100%', marginTop: "10px" }}>Requset 10 Nelo</Button>
                   </Card>
                 </Col>
               </Row>
