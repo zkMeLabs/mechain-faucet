@@ -1,0 +1,53 @@
+.bg {
+  height: 200px;
+  width: 100%;
+  background: #f9f9f9 url("/images/bg_foot.png") no-repeat scroll top left;
+  background-size: 100% 200px;
+  margin-left: 0px;
+}
+.pos {
+  height: 200px;
+  position: fixed;
+  margin: 0px;
+  left: 0px;
+  bottom: 0px;
+  width: 100%;
+}
+
+.img {
+  float: left;
+}
+
+.title {
+  float: left;
+  padding: 10px 0px 0px 10px;
+  font-size: 23px;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 30px;
+}
+
+.chain {
+  font-size: 16px;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  color: #a8b3b8;
+  line-height: 30px;
+}
+
+.about {
+  font-size: 16px;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 30px;
+  margin-top: 43px;
+}
+
+.pic {
+  width: 44px;
+  height: 44px;
+  background: #263c4b;
+  border-radius: 50%;
+}

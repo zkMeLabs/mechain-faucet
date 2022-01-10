@@ -5,6 +5,8 @@ import FingerprintJS from '@fingerprintjs/fingerprintjs';
 import { Layout, Image, message, Button, Col, Row, Card, Input, Spin } from 'antd';
 import { FacebookOutlined, GithubOutlined, TwitterOutlined, WeiboOutlined, GooglePlusOutlined } from '@ant-design/icons';
 const { Header, Content, Footer } = Layout;
+import Foot from '../components/foot'
+
 const sleep = time => {
   return new Promise(resolve => setTimeout(resolve, time));
 }
@@ -81,7 +83,7 @@ export default class App extends Component {
       if (status === 200) {
         const { code, msg } = data
         if (code === 0) {
-          message.success("successfully send 0.1 nelo to " + to, 30)
+          message.success("successfully send 10 nelo to " + to, 30)
         } else {
           err = msg
           message.error(msg)
@@ -104,37 +106,20 @@ export default class App extends Component {
     return (
       <div className='app'>
         <Spin tip="In the transaction......" spinning={loading}>
-          <Layout>
-            <Header>
-              <div>
-                <Image className="header-logo" preview={false} width={182} height={35} src="/images/nelo2.png" />
-              </div>
-            </Header>
-            <Content>
-              <Row type="flex" justify="center" align="middle" style={{ height: '100%' }}>
-                <Col style={{ minWidth: '500px', maxWidth: '500px' }}>
-                  <Card title="NELO NETWORK FAUCET" bordered={true}>
-                    <Input ref={c => this.inputAddress = c} size="large" placeholder="Input you address" allowClear style={{ marginBottom: "15px" }} />
-                    {/* <div id="nc"></div> */}
-                    <Button onClick={this.send} type="primary" size="large" disabled={result && !err && false} style={{ width: '100%', marginTop: "10px" }}>Requset 10 Nelo</Button>
-                  </Card>
-                </Col>
-              </Row>
-            </Content>
-            <Footer>
-              <Row type="flex" justify="center" align="middle">
-                <Col span={8}></Col>
-                <Col span={16}><div>Copyright © 2021 Nelo Metaverse Pte Ltd - All Rights Reserved.</div></Col>
-                {/* <Col span={8}>
-                  <FacebookOutlined style={{ fontSize: '25px', marginRight: '10px' }} />
-                  <GithubOutlined style={{ fontSize: '25px', marginRight: '10px' }} />
-                  <TwitterOutlined style={{ fontSize: '25px', marginRight: '10px' }} />
-                  <WeiboOutlined style={{ fontSize: '25px', marginRight: '10px' }} />
-                  <GooglePlusOutlined style={{ fontSize: '25px', marginRight: '10px' }} />
-                </Col> */}
-              </Row>
-            </Footer>
-          </Layout>
+          <div className="header-logo">
+            <Image preview={false} width={182} height={35} src="/images/nelo.png" />
+          </div>
+          <Row type="flex" justify="center" align="middle" className='content'>
+            <Col style={{ minWidth: '500px', maxWidth: '500px' }}>
+              <Card title="NSC TESTNET FAUCET" bordered={true}>
+                <Input ref={c => this.inputAddress = c} size="large" placeholder="Input you address" allowClear style={{ marginBottom: "15px" }} />
+                <div style={{ margin: "12px 0px" }}>
+                  <div onClick={this.send} className="send">Requset 10 Nelo</div>
+                </div>
+              </Card>
+            </Col>
+          </Row>
+          <Foot></Foot>
         </Spin>
       </div>
     )
