@@ -107,7 +107,7 @@ export default class App extends Component {
           <Layout>
             <Header>
               <div>
-                <Image className="header-logo" preview={false} width={182} height={35} src="/images/faucet_top.png" />
+                <Image className="header-logo" preview={false} width={182} height={35} src="/images/nelo2.png" />
               </div>
             </Header>
             <Content>
@@ -124,14 +124,14 @@ export default class App extends Component {
             <Footer>
               <Row type="flex" justify="center" align="middle">
                 <Col span={8}></Col>
-                <Col span={8}><div>Copyright © 2021 NELO.World - All Rights Reserved.</div></Col>
-                <Col span={8}>
+                <Col span={16}><div>Copyright © 2021 Nelo Metaverse Pte Ltd - All Rights Reserved.</div></Col>
+                {/* <Col span={8}>
                   <FacebookOutlined style={{ fontSize: '25px', marginRight: '10px' }} />
                   <GithubOutlined style={{ fontSize: '25px', marginRight: '10px' }} />
                   <TwitterOutlined style={{ fontSize: '25px', marginRight: '10px' }} />
                   <WeiboOutlined style={{ fontSize: '25px', marginRight: '10px' }} />
                   <GooglePlusOutlined style={{ fontSize: '25px', marginRight: '10px' }} />
-                </Col>
+                </Col> */}
               </Row>
             </Footer>
           </Layout>

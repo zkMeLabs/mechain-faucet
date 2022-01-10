@@ -3,12 +3,12 @@ const Web3 = require('web3')
 const PouchDB = require("pouchdb");
 const dayjs = require("dayjs");
 const db = new PouchDB("./pouchdb");
-const web3 = new Web3("http://node.lucq.fun");
-const hexPrivateKey = "b5383875512d64281acfb81cc37a95b0ddc00b235a3aa60cf8b4be25a3ba8fe5"; // 0xfffff01adb78f8951aa28cf06ceb9b8898a29f50
+const web3 = new Web3("http://15.223.32.213:6060");
+const hexPrivateKey = "087416a49df248939791948d5003c139bd09e959be9bf042ccac3af63f1bb7da"; // 0x3F22C974963A6aE0040c399F29C539a90b848d31
 const account = web3.eth.accounts.privateKeyToAccount(hexPrivateKey)
-const value = "100000000000000000"
-const chainId = 1024
-const gasPrice = 1000000000
+const value = "10000000000000000000"
+const chainId = 101
+const gasPrice = 100000000000000
 const gas = 21000
 const from = account.address
 console.log("api/faucet start")
@@ -26,8 +26,8 @@ export default async function handler(req, res) {
     const accounts = info.accounts.split("_")
     if (info.accounts.indexOf(to.toLowerCase()) >= 0 || info.accounts.indexOf(id) >= 0) {
       return res.status(200).json({ msg: "A maximum of 1 withdrawals per day are allowed", code: 401 })
-    } else if (accounts.length >= 100) {
-      return res.status(200).json({ msg: "One IP address can be received for a maximum of 100 times a day", code: 400 })
+    } else if (accounts.length >= 10) {
+      return res.status(200).json({ msg: "One IP address can be received for a maximum of 10 times a day", code: 400 })
     }
     await db.put({
       _id: info._id,
