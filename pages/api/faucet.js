@@ -2,7 +2,7 @@
 const Web3 = require('web3')
 const dayjs = require("dayjs");
 const fs = require("fs-extra")
-const { provider, chainId, hexPrivateKey, value, gasPrice, gas, ipMax } = require("../../faucet.json")
+let { provider, chainId, hexPrivateKey, value, gasPrice, gas, ipMax, addressMax } = require("../../faucet.json")
 const web3 = new Web3(provider);
 const account = web3.eth.accounts.privateKeyToAccount(hexPrivateKey)
 const from = account.address
@@ -52,7 +52,7 @@ console.log("api/faucet start", provider, chainId, hexPrivateKey, value, gasPric
 export default async function handler(req, res) {
   const { body, headers } = req
   const { to, id } = body
-  const ip = headers['x-real-ip'] || "127.0.0.1"
+  const ip = headers['cf-connecting-ip'] || "127.0.0.1"
   const date = dayjs().format("YYYYMMDD")
   console.log(date, ip, id, to)
 
