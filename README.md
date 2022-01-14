@@ -32,3 +32,21 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## 去重设计
+在db目录下面，按照天的文件名，存着比如20220114.json文件
+这个json文件内容如下
+```json
+{
+  "date":20220114,
+  "192.168.0.1":{
+      "count":4,
+      "738792848":{
+          "0x6e355de3fbc1290c5A72D9A9400A0304E2b8a756":2
+      },
+      "892874988":{
+          "0x00000Be6819f41400225702D32d3dd23663Dd690":2
+      }
+  }
+}
+```
