@@ -109,9 +109,9 @@ export default class App extends Component {
           <div className="header-logo">
             <Image preview={false} width={182} height={35} src="/images/nelo.png" />
             <div style={{ float: "right" }}>
-              <a style={{ fontSize: "20px", fontFamily: "Microsoft YaHei" }} href="https://nsctestnetscan.nelo.world/" target="_blank">Scan&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
-              <a style={{ fontSize: "20px", fontFamily: "Microsoft YaHei" }} href="https://nsctestnetdapp.nelo.world/" target="_blank">Blind Box&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
-              <a style={{ fontSize: "20px", fontFamily: "Microsoft YaHei" }} href="https://nsctestnetdapp.nelo.world/farms" target="_blank">Farms&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+              <a style={{ fontSize: "20px", fontFamily: "Microsoft YaHei" }} rel="noreferrer" href="https://nsctestnetscan.nelo.world/" target="_blank">Scan&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+              <a style={{ fontSize: "20px", fontFamily: "Microsoft YaHei" }} rel="noreferrer" href="https://nsctestnetdapp.nelo.world/" target="_blank">Blind Box&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+              <a style={{ fontSize: "20px", fontFamily: "Microsoft YaHei" }} rel="noreferrer" href="https://nsctestnetdapp.nelo.world/farms" target="_blank">Farms&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
             </div>
           </div>
           <Row type="flex" justify="center" align="middle" className='content'>
