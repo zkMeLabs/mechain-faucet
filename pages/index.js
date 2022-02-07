@@ -83,7 +83,7 @@ export default class App extends Component {
       if (status === 200) {
         const { code, msg } = data
         if (code === 0) {
-          message.success("successfully send 10 nelo to " + to, 30)
+          message.success("successfully send 10 eth to " + to, 30)
         } else {
           err = msg
           message.error(msg)
@@ -117,9 +117,9 @@ export default class App extends Component {
           <Row type="flex" justify="center" align="middle" className='content'>
             <Col style={{ minWidth: '500px', maxWidth: '500px' }}>
               <Card title="PRIVATE CHAIN FAUCET" bordered={true}>
-                <Input ref={c => this.inputAddress = c} size="large" placeholder="Input you address" allowClear style={{ marginBottom: "15px" }} />
+                <Input ref={c => this.inputAddress = c} size="large" placeholder="Input your address" allowClear style={{ marginBottom: "15px" }} />
                 <div style={{ margin: "12px 0px" }}>
-                  <div onClick={this.send} className="send">Requset 10 Ether</div>
+                  <div onClick={this.send} className="send">Request 10 Ether</div>
                 </div>
               </Card>
             </Col>
