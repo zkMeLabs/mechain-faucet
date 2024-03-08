@@ -83,7 +83,7 @@ export default class App extends Component {
       if (status === 200) {
         const { code, msg } = data;
         if (code === 0) {
-          message.success("successfully send 10 eth to " + to, 30);
+          message.success("successfully send 1 Ethos to " + to, 30);
         } else {
           err = msg;
           message.error(msg);
