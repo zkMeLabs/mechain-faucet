@@ -1,34 +1,34 @@
-import React, { Component } from 'react'
-import axios from 'axios';
+import React, { Component } from "react";
+import axios from "axios";
 import dayjs from "dayjs";
-import FingerprintJS from '@fingerprintjs/fingerprintjs';
-import { Layout, Image, message, Button, Col, Row, Card, Input, Spin } from 'antd';
-import { FacebookOutlined, GithubOutlined, TwitterOutlined, WeiboOutlined, GooglePlusOutlined } from '@ant-design/icons';
+import FingerprintJS from "@fingerprintjs/fingerprintjs";
+import { Layout, Image, message, Button, Col, Row, Card, Input, Spin } from "antd";
+import { FacebookOutlined, GithubOutlined, TwitterOutlined, WeiboOutlined, GooglePlusOutlined } from "@ant-design/icons";
 const { Header, Content, Footer } = Layout;
-import Foot from '../components/foot'
+import Foot from "../components/foot";
 
-const sleep = time => {
-  return new Promise(resolve => setTimeout(resolve, time));
-}
+const sleep = (time) => {
+  return new Promise((resolve) => setTimeout(resolve, time));
+};
 export default class App extends Component {
   state = {
     loading: false,
-    to: '',
-    hash: '',
-    err: '',
+    to: "",
+    hash: "",
+    err: "",
     result: false,
-    inputAddress: ''
-  }
-  id = ""
+    inputAddress: "",
+  };
+  id = "";
 
   async componentDidMount() {
     try {
-      const load = await FingerprintJS.load()
+      const load = await FingerprintJS.load();
       const result = await load.get();
-      console.log("visitorId", result.visitorId)
-      this.id = result.visitorId.toLowerCase()
+      console.log("visitorId", result.visitorId);
+      this.id = result.visitorId.toLowerCase();
     } catch (error) {
-      this.id = dayjs().format("yyyyMMdd")
+      this.id = dayjs().format("yyyyMMdd");
     }
 
     // window.AWSC.use("nc", function (state, module) {
@@ -62,64 +62,72 @@ export default class App extends Component {
   }
 
   send = async () => {
-    const { value } = this.inputAddress.state
-    let to = value
+    const { value } = this.inputAddress.state;
+    let to = value;
 
     if (!to) {
-      message.error("Please enter an address")
-      return
+      message.error("Please enter an address");
+      return;
     } else if (!/^(0x)?[0-9a-f]{40}$/i.test(to)) {
-      message.error(to + " it's not a valid address")
-      return
+      message.error(to + " it's not a valid address");
+      return;
     }
 
-    this.setState({ loading: true, result: false })
-    let hash = ""
-    let err = ""
-    await sleep(100)
+    this.setState({ loading: true, result: false });
+    let hash = "";
+    let err = "";
+    await sleep(100);
     try {
-      const reply = await axios.post(`/api/faucet`, { to, id: this.id })
-      const { status, statusText, data } = reply
+      const reply = await axios.post(`/api/faucet`, { to, id: this.id });
+      const { status, statusText, data } = reply;
       if (status === 200) {
-        const { code, msg } = data
+        const { code, msg } = data;
         if (code === 0) {
-          message.success("successfully send 10 eth to " + to, 30)
+          message.success("successfully send 10 eth to " + to, 30);
         } else {
-          err = msg
-          message.error(msg)
+          err = msg;
+          message.error(msg);
         }
       } else {
-        err = statusText
-        message.error("a error happen:" + statusText)
+        err = statusText;
+        message.error("a error happen:" + statusText);
       }
-      console.log(data)
+      console.log(data);
     } catch (error) {
-      err = typeof error == "string" ? error : "a error happen"
-      message.error("a error happen, please try again later")
-      console.log(error)
+      err = typeof error == "string" ? error : "a error happen";
+      message.error("a error happen, please try again later");
+      console.log(error);
     }
-    this.setState({ loading: false, to, hash, err, result: true })
-  }
+    this.setState({ loading: false, to, hash, err, result: true });
+  };
 
   render() {
-    const { loading, result, err } = this.state
+    const { loading, result, err } = this.state;
     return (
-      <div className='app'>
+      <div className="app">
         <Spin tip="In the transaction......" spinning={loading}>
           <div className="header-logo">
             <Image preview={false} width={72} height={72} src="/images/coin-faucet.png" />
             <div style={{ float: "right", marginTop: "18px" }}>
-              <a style={{ fontSize: "20px", fontFamily: "Microsoft YaHei" }} rel="noreferrer" href="http://scan.lucq.fun/" target="_blank">Scan&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
-              <a style={{ fontSize: "20px", fontFamily: "Microsoft YaHei" }} rel="noreferrer" href="http://eth.lucq.fun/" target="_blank">Tool&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
-              <a style={{ fontSize: "20px", fontFamily: "Microsoft YaHei" }} rel="noreferrer" href="http://uniswap.lucq.fun" target="_blank">Uniswap&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+              <a style={{ fontSize: "20px", fontFamily: "Microsoft YaHei" }} rel="noreferrer" href="http://scan.lucq.fun/" target="_blank">
+                Scan&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              </a>
+              <a style={{ fontSize: "20px", fontFamily: "Microsoft YaHei" }} rel="noreferrer" href="http://eth.lucq.fun/" target="_blank">
+                Tool&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              </a>
+              <a style={{ fontSize: "20px", fontFamily: "Microsoft YaHei" }} rel="noreferrer" href="http://uniswap.lucq.fun" target="_blank">
+                Uniswap&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              </a>
             </div>
           </div>
-          <Row type="flex" justify="center" align="middle" className='content'>
-            <Col style={{ minWidth: '500px', maxWidth: '500px' }}>
+          <Row type="flex" justify="center" align="middle" className="content">
+            <Col style={{ minWidth: "500px", maxWidth: "500px" }}>
               <Card title="PRIVATE CHAIN FAUCET" bordered={true}>
-                <Input ref={c => this.inputAddress = c} size="large" placeholder="Input your address" allowClear style={{ marginBottom: "15px" }} />
+                <Input ref={(c) => (this.inputAddress = c)} size="large" placeholder="Input your address" allowClear style={{ marginBottom: "15px" }} />
                 <div style={{ margin: "12px 0px" }}>
-                  <div onClick={this.send} className="send">Request 10 Ether</div>
+                  <div onClick={this.send} className="send">
+                    Request 1 Ethos
+                  </div>
                 </div>
               </Card>
             </Col>
@@ -127,6 +135,6 @@ export default class App extends Component {
           <Foot></Foot>
         </Spin>
       </div>
-    )
+    );
   }
 }

@@ -1,10 +1,8 @@
 {
-  "provider": "http://15.223.32.213:6060",
-  "chainId": 101,
-  "hexPrivateKey": "4003cbb02d371ea290a588f11fdbd2ef32ebe21714c4b34b19fd984590b5ae7e",
-  "value": "10000000000000000000",
-  "gasPrice": "100000000000000",
-  "gas": "41000",
+  "provider": "http://ethos-eth-rpc.mybc.fun/",
+  "chainId": 20191230,
+  "hexPrivateKey": "95e06fa1a8411d7f8893f486f0f450b122c58feadbcee43fbd02e13da88395d5",
+  "value": "1000000000000000000",
   "ipMax": 1,
   "addressMax": 1
 }
