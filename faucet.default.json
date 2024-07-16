@@ -1,7 +1,7 @@
 {
-  "provider": "http://ethos-eth-rpc.mybc.fun/",
-  "chainId": 20191230,
-  "hexPrivateKey": "95e06fa1a8411d7f8893f486f0f450b122c58feadbcee43fbd02e13da88395d5",
+  "provider": "https://rpc.ethos.cool/",
+  "chainId": 10000000,
+  "hexPrivateKey": "",
   "value": "1000000000000000000",
   "ipMax": 1,
   "addressMax": 1
