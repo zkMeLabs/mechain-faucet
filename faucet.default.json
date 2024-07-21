@@ -1,6 +1,6 @@
 {
-  "provider": "https://rpc.ethos.cool/",
-  "chainId": 10000000,
+  "provider": "https://testnet-rpc.mud-chain.net/",
+  "chainId": 168169,
   "hexPrivateKey": "",
   "value": "1000000000000000000",
   "ipMax": 1,

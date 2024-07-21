@@ -10,12 +10,12 @@ const sleep = (time) => {
 };
 
 const showMessageWithLink = (to, hash) => {
-  const link = 'https://scan.ethos.cool/tx/' + hash;
+  const link = 'https://testnet-scan.mud-chain.net/tx/' + hash;
   const content = (
     <span>
-      Success send 1 ETHOS to {to}, more detail see
+      Success send 1 MUD to {to}, more detail see
       <a rel="noreferrer" href={link} target="_blank" style={{ color: 'blue' }}>
-        &nbsp;EthosScan
+        &nbsp;MudScan
       </a>
     </span>
   );
@@ -90,26 +90,26 @@ export default class App extends Component {
       <div className="app">
         <Spin tip="In the transaction......" spinning={loading}>
           <div className="header-logo">
-            <Image preview={false} width={72} height={72} src="/images/coin-faucet.png" alt="Ethos fuacet" />
+            <Image preview={false} width={72} height={72} src="/images/coin-faucet.png" alt="MUD fuacet" />
             <div style={{ float: 'right', marginTop: '18px' }}>
               <a
                 style={{ fontSize: '20px', fontFamily: 'Microsoft YaHei' }}
                 rel="noreferrer"
-                href="https://scan.ethos.cool/"
+                href="https://testnet-scan.mud-chain.net/"
                 target="_blank">
                 Scan&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               </a>
               <a
                 style={{ fontSize: '20px', fontFamily: 'Microsoft YaHei' }}
                 rel="noreferrer"
-                href="https://bridge.ethos.cool/"
+                href="https://testnet-bridge.mud-chain.net/"
                 target="_blank">
                 Bridge&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               </a>
               <a
                 style={{ fontSize: '20px', fontFamily: 'Microsoft YaHei' }}
                 rel="noreferrer"
-                href="https://swap.ethos.cool"
+                href="https://testnet-swap.mud-chain.net"
                 target="_blank">
                 Uniswap&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               </a>
@@ -117,7 +117,7 @@ export default class App extends Component {
           </div>
           <Row type="flex" justify="center" align="middle" className="content">
             <Col style={{ minWidth: '500px', maxWidth: '500px' }}>
-              <Card title="ETHOS CHAIN FAUCET" bordered={true}>
+              <Card title="MUD CHAIN FAUCET" bordered={true}>
                 <Input
                   ref={(c) => (this.inputAddress = c)}
                   size="large"
@@ -127,7 +127,7 @@ export default class App extends Component {
                 />
                 <div style={{ margin: '12px 0px' }}>
                   <div onClick={this.send} className="send">
-                    Request 1 ETHOS
+                    Request 1 MUD
                   </div>
                 </div>
               </Card>
