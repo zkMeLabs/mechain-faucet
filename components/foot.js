@@ -8,8 +8,8 @@ export default function Foot() {
       <div style={{ width: '80%', margin: '0 auto' }}>
         <Row gutter={[0, 0]}>
           <Col span={8}>
-            <div className={styles.about}>MUD faucet</div>
-            <div className={styles.chain}>Copyright © 2024 MUD</div>
+            <div className={styles.about}>Mechain faucet</div>
+            <div className={styles.chain}>Copyright © 2024 Mechain</div>
             <div className={styles.chain}>All rights reserved</div>
           </Col>
           <Col span={8}>

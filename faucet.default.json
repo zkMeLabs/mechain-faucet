@@ -1,8 +1,8 @@
 {
-  "provider": "https://testnet-rpc.mud-chain.net/",
-  "chainId": 168169,
-  "hexPrivateKey": "",
+  "provider": "https://devnet-rpc.mechain.tech/",
+  "chainId": 1000000,
+  "hexPrivateKey": "f78a036930ce63791ea6ea20072986d8c3f16a6811f6a2583b0787c45086f769",
   "value": "1000000000000000000",
-  "ipMax": 1,
+  "ipMax": 10,
   "addressMax": 1
 }

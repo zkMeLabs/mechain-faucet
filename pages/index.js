@@ -10,12 +10,12 @@ const sleep = (time) => {
 };
 
 const showMessageWithLink = (to, hash) => {
-  const link = 'https://testnet-scan.mud-chain.net/tx/' + hash;
+  const link = 'https://devnet-scan.mechain.tech/tx/' + hash;
   const content = (
     <span>
-      Success send 1 MUD to {to}, more detail see
+      Success send 1 ME to {to}, more detail see
       <a rel="noreferrer" href={link} target="_blank" style={{ color: 'blue' }}>
-        &nbsp;MudScan
+        &nbsp;MechainScan
       </a>
     </span>
   );
@@ -90,34 +90,20 @@ export default class App extends Component {
       <div className="app">
         <Spin tip="In the transaction......" spinning={loading}>
           <div className="header-logo">
-            <Image preview={false} width={72} height={72} src="/images/coin-faucet.png" alt="MUD fuacet" />
+            <Image preview={false} width={72} height={72} src="/images/coin-faucet.png" alt="MECHAIN fuacet" />
             <div style={{ float: 'right', marginTop: '18px' }}>
               <a
                 style={{ fontSize: '20px', fontFamily: 'Microsoft YaHei' }}
                 rel="noreferrer"
-                href="https://testnet-scan.mud-chain.net/"
+                href="https://devnet-scan.mechain.tech/"
                 target="_blank">
                 Scan&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              </a>
-              <a
-                style={{ fontSize: '20px', fontFamily: 'Microsoft YaHei' }}
-                rel="noreferrer"
-                href="https://testnet-bridge.mud-chain.net/"
-                target="_blank">
-                Bridge&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              </a>
-              <a
-                style={{ fontSize: '20px', fontFamily: 'Microsoft YaHei' }}
-                rel="noreferrer"
-                href="https://testnet-swap.mud-chain.net"
-                target="_blank">
-                Uniswap&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               </a>
             </div>
           </div>
           <Row type="flex" justify="center" align="middle" className="content">
             <Col style={{ minWidth: '500px', maxWidth: '500px' }}>
-              <Card title="MUD CHAIN FAUCET" bordered={true}>
+              <Card title="MECHAIN CHAIN FAUCET" bordered={true}>
                 <Input
                   ref={(c) => (this.inputAddress = c)}
                   size="large"
@@ -127,7 +113,7 @@ export default class App extends Component {
                 />
                 <div style={{ margin: '12px 0px' }}>
                   <div onClick={this.send} className="send">
-                    Request 1 MUD
+                    Request 1 ME
                   </div>
                 </div>
               </Card>
