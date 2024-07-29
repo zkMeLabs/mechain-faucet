@@ -1,9 +1,11 @@
-## Overview
+# Overview
+
 In the testnet mechain native token ME have no market value, they can be obtained for free and are meant for testing purposes only.
 
 mechain network faucets provide native token ME to legitimate developers willing to deploy and test contracts. The faucets also prevent malicious actors from obtaining large amounts of native token ME.
 
 ## Deploy
+
 - Install Node.js, version v20.x.
 - Execute `yarn` in the project directory to install dependencies.
 - Execute `yarn build` in the project directory to build static file.
@@ -16,4 +18,4 @@ mechain network faucets provide native token ME to legitimate developers willing
   - ipMax: The number of times a single IP address can claim per day.
   - addressMax: The number of times a single account address can claim per day.
 - Execute `pm2 start npm --name "faucet" -- start` start the service.
-- On nginx, forward requests for the domain https://devnet-faucet.mechain.tech/ to http://127.0.0.1:4001. 
+- On nginx, forward requests for the domain <https://devnet-faucet.mechain.tech/> to <http://127.0.0.1:4001>.
