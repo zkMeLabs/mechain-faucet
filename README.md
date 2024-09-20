@@ -1,8 +1,8 @@
 # Overview
 
-In the testnet mechain native token ME have no market value, they can be obtained for free and are meant for testing purposes only.
+In the testnet mechain native token ZKME have no market value, they can be obtained for free and are meant for testing purposes only.
 
-mechain network faucets provide native token ME to legitimate developers willing to deploy and test contracts. The faucets also prevent malicious actors from obtaining large amounts of native token ME.
+mechain network faucets provide native token ZKME to legitimate developers willing to deploy and test contracts. The faucets also prevent malicious actors from obtaining large amounts of native token ZKME.
 
 ## Deploy
 
